@@ -1,0 +1,12 @@
+{
+  "setupFiles": [
+    "raf/polyfill",
+    "<rootDir>/src/tests/setupTests.js"
+  ],
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ],
+  "transformIgnorePatterns" : [
+    "/node_modules/", "<rootDir>/node_modules/react-dates/lib/css/_datepicker.css"
+  ]
+}
