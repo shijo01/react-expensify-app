@@ -4,7 +4,7 @@ const getVisibleExpenses = (expenses, {text, sortBy, startDate, endDate} = {}) =
     return expenses.filter((expense) => {
         const startDateMatch = startDate ? startDate.isSameOrBefore(moment(expense.createdAt), 'day') : true;
         const endDateMatch =  endDate ? endDate.isSameOrAfter(moment(expense.createdAt), 'day') :true;
-        const textMatch = text === '' || expense.description.toLocaleLowerCase().includes(text.toLocaleLowerCase());
+        const textMatch = text === '' || !expense.description || expense.description.toLocaleLowerCase().includes(text.toLocaleLowerCase());
 
         return startDateMatch && endDateMatch && textMatch;
     }).sort((e1, e2) => {
