@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import {addExpense} from "../actions/expenses";
 
 const AddExpensePage = (props) => {
-    console.log(props);
     return (
         <div>
             <h1>Add Expense</h1>
