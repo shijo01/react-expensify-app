@@ -232,7 +232,7 @@ exports[`should render expense form with expense data correct 1`] = `
       value=""
     />
     <button>
-      Add Expense
+      Save Expense
     </button>
   </form>
 </div>

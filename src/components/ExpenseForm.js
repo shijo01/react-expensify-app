@@ -15,7 +15,8 @@ export default class ExpenseForm extends React.Component {
             amount: props.expense ? (props.expense.amount / 100).toString() : "",
             createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
             calendarFocused: false,
-            error: undefined
+            error: undefined,
+            buttonText: props.expense ? 'Save Expense' : 'Add Expense'
         };
     }
 
@@ -97,7 +98,7 @@ export default class ExpenseForm extends React.Component {
 
                     </textarea>
 
-                    <button>Add Expense</button>
+                    <button>{this.state.buttonText}</button>
                 </form>
                 {this.state.error && <p>{this.state.error}</p>}
             </div>

@@ -22,7 +22,6 @@ const expenses = [{
 }];
 
 
-
 test('should set default state', () => {
     const state = expensesReducer(undefined, {type: '@@INIT'});
     expect(state).toEqual([]);
@@ -83,6 +82,15 @@ test('should not edit an expense if id not found', () => {
         updates: {
             amount
         }
+    };
+    const state = expensesReducer(expenses, action);
+    expect(state).toEqual(expenses);
+});
+
+test('shpuld set expenses', () => {
+    const action = {
+        type: 'SET_EXPENSE',
+        expenses
     };
     const state = expensesReducer(expenses, action);
     expect(state).toEqual(expenses);
