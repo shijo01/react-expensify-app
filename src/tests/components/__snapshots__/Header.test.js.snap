@@ -8,8 +8,7 @@ exports[`should render Header correctly 1`] = `
   <NavLink
     activeClassName="is-active"
     aria-current="page"
-    exact={true}
-    to="/"
+    to="/dashboard"
   >
     Home
   </NavLink>
@@ -20,5 +19,8 @@ exports[`should render Header correctly 1`] = `
   >
     Add
   </NavLink>
+  <button>
+    Log Out
+  </button>
 </header>
 `;
