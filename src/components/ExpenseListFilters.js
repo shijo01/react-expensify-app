@@ -20,46 +20,56 @@ class ExpenseListFilters extends React.Component {
 
     render() {
         return (
-            <div>
-                <input
-                    type="text"
-                    value={this.props.filters.text}
-                    onChange={
-                        (e) => {
-                            this.props.dispatch(setTextFilter(e.target.value));
-                        }
-                    }
-                />
-                Sort by
-                <select
-                    value={this.props.filters.sortBy}
-                    onChange={
-                        (e) => {
-                            if (e.target.value === 'date') {
-                                this.props.dispatch(sortByDate());
-                            } else if (e.target.value === 'amount') {
-                                this.props.dispatch(sortByAmount())
+            <div className="content-container">
+                <div className="filter-group">
+                    <div className='filter-group__item'>
+                        <input
+                            className="text-input"
+                            placeholder='Search expenses'
+                            type="text"
+                            value={this.props.filters.text}
+                            onChange={
+                                (e) => {
+                                    this.props.dispatch(setTextFilter(e.target.value));
+                                }
                             }
-                        }
-                    }
-                >
-                    <option value="date">Date</option>
-                    <option value="amount">Amount</option>
-                </select>
+                        />
+                    </div>
+                    <div className='filter-group__item'>
+                        <select
+                            className="select"
+                            value={this.props.filters.sortBy}
+                            onChange={
+                                (e) => {
+                                    if (e.target.value === 'date') {
+                                        this.props.dispatch(sortByDate());
+                                    } else if (e.target.value === 'amount') {
+                                        this.props.dispatch(sortByAmount())
+                                    }
+                                }
+                            }
+                        >
+                            <option value="date">Date</option>
+                            <option value="amount">Amount</option>
+                        </select>
 
-                <DateRangePicker
-                    startDate={this.props.filters.startDate}
-                    endDate={this.props.filters.endDate}
-                    onDatesChange={this.onDatesChange}
-                    focusedInput={this.state.calenderFocused}
-                    onFocusChange={this.onFocusChange}
-                    startDateId={"0"}
-                    endDateId={"1"}
-                    numberOfMonths={2}
-                    isOutsideRange={() => false}
-                    showClearDates={true}
+                    </div>
+                    <div className='filter-group__item'>
+                        <DateRangePicker
+                            startDate={this.props.filters.startDate}
+                            endDate={this.props.filters.endDate}
+                            onDatesChange={this.onDatesChange}
+                            focusedInput={this.state.calenderFocused}
+                            onFocusChange={this.onFocusChange}
+                            startDateId={"0"}
+                            endDateId={"1"}
+                            numberOfMonths={2}
+                            isOutsideRange={() => false}
+                            showClearDates={true}
 
-                />
+                        />
+                    </div>
+                </div>
             </div>
         );
     }

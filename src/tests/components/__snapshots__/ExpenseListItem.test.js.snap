@@ -1,20 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseListItem correctly 1`] = `
-<div>
-  <NavLink
-    activeClassName="active"
-    aria-current="page"
-    to="/edit/1"
-  >
-    <h3>
+<Link
+  className="list-item"
+  replace={false}
+  to="/edit/1"
+>
+  <div>
+    <h3
+      className="list-item__title"
+    >
       Gum
     </h3>
-  </NavLink>
-  <p>
-    ₹1.95
-    -
-    Jan 1st, 1970
-  </p>
-</div>
+    <span
+      className="list-item__subtitle"
+    >
+       
+      Jan 1st, 1970
+       
+    </span>
+  </div>
+  <div>
+    <h3
+      className="list-item__data"
+    >
+       
+      $1.95
+       
+    </h3>
+  </div>
+</Link>
 `;
